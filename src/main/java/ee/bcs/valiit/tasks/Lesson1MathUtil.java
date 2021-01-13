@@ -13,32 +13,56 @@ public class Lesson1MathUtil {
 
     // TODO tagasta a ja b väikseim väärtus
     public static int min(int a, int b) {
+        System.out.println(min(3, 5));
+        System.out.println(min(-1, -9));
         return 0;
     }
 
     // TODO tagasta a ja b suurim väärtus
     public static int max(int a, int b) {
-        return 0;
+        if (a > b) {
+            return a;
+        } else {
+            return b;
+        }
     }
 
     // TODO tagasta a absoluut arv
     public static int abs(int a) {
-        return 0;
+        if (a >= 0) {
+            return -a;
+        } else {
+            return a;
+        }
     }
 
     // TODO tagasta true, kui a on paaris arv
-    // tagasta false kui a on paaritu arv
+    // false kui a on paaritu arv
     public static boolean isEven(int a) {
-        return true;
+        if (a % 2 == 0) {
+            return true;
+        } else {
+        }
+        return false;
     }
+
 
     // TODO tagasta kolmest arvust kõige väiksem
     public static int min(int a, int b, int c) {
-        return 0;
+        if (a <= b && b <= c) {
+            return a;
+        } else if (a >= b && b >= c) {
+            return b;
+        } else {
+            return c;
+        }
+
     }
 
     // TODO tagasta kolmest arvust kõige suurem
     public static int max(int a, int b, int c) {
-        return 0;
+        int max = max(a, b);
+        return max(max, c);
     }
+
 }
