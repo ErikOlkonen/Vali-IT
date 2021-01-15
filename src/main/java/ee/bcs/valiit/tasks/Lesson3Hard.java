@@ -4,7 +4,12 @@ import java.util.Random;
 
 public class Lesson3Hard {
     public static int evenFibonacci(int x){
+
+
+
         // TODO liida kokku kõik paaris fibonacci arvud kuni numbrini x
+        // Fibonacci jada on fib(n) = fib(n-1) + fib(n-2);
+        // 0, 1, 1, 2, 3, 5, 8, 13, 21
         return 0;
     }
 

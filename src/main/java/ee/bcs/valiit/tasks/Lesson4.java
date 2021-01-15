@@ -6,13 +6,16 @@ import java.util.Scanner;
 
 public class Lesson4 {
     // Store account nr as a key and account balance as value
-    HashMap<String, BigDecimal> accountBalanceMap = new HashMap<>();
+    static HashMap<String, BigDecimal> accountBalanceMap = new HashMap<>();
+
 
     public static void main(String[] args) {
+        System.out.println("Sisesta midagi..");
+        System.out.println("Sisesta exit et väljuda");
         Scanner scanner = new Scanner(System.in);
-        while (true){
+        while (true) {
             String line = scanner.nextLine();
-            if (line.equalsIgnoreCase("exit")){
+            if (line.equalsIgnoreCase("exit")) {
                 break;
             }
             // TODO 1
@@ -37,6 +40,13 @@ public class Lesson4 {
             // And from account has enough money to do that transaction
             else {
                 System.out.println("Unknown command");
+            }
+        }
+        while (true) {
+            String line = scanner.nextLine();
+            if (line.equalsIgnoreCase("createAccount")) {
+                System.out.println("Konto loomine");
+
             }
         }
     }
