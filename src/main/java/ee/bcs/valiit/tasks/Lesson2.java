@@ -8,10 +8,11 @@ public class Lesson2 {
 
     public static void main(String[] args) {
 
-/*
-        exercise1();
-        exercise2(5);
-        exercise3(3, 3);
+
+        exercise1(); // ei tagasta
+        exercise2(5); // ei tagasta
+        exercise3(3, 3); // ei tagasta
+        exercise4(6); // tagastab v22rtuse aga seda ei kasutata
         System.out.println(exercise4(0));
         System.out.println(exercise4(1));
         System.out.println(exercise4(2));
@@ -22,8 +23,8 @@ public class Lesson2 {
         System.out.println(exercise4(7));
         System.out.println(exercise4(8));
         System.out.println(exercise4(9));
-*/
-        System.out.println(exercise5(1,10));
+
+        System.out.println(exercise5(1, 10));
         seqLenght(2);
         // TODO siia saab kirjutada koodi testimiseks
     }

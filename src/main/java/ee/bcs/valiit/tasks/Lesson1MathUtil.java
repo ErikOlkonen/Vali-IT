@@ -15,7 +15,7 @@ public class Lesson1MathUtil {
 
     // TODO tagasta a ja b väikseim väärtus
     public static int min(int a, int b) {
-        if (a < b){
+        if (a < b) {
             return a;
         } else {
             return b;
@@ -33,7 +33,7 @@ public class Lesson1MathUtil {
 
     // TODO tagasta a absoluut arv
     public static int abs(int a) {
-        if (a >= 0) {
+        if (a < 0) {
             return -a;
         } else {
             return a;
@@ -46,8 +46,9 @@ public class Lesson1MathUtil {
         if (a % 2 == 0) {
             return true;
         } else {
+            return false;
         }
-        return false;
+
     }
 
 
