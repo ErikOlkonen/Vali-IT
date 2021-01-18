@@ -5,10 +5,10 @@ public class Lesson1 {
     public static void main(String[] args) {
         System.out.println(args.length);
         System.out.println(args[args.length-2]);
-        //excersie1();
-        //excersie2();
-        //excersie3();
-        //excersie4();
+        excersie1();
+        excersie2();
+        excersie3();
+        excersie4();
     }
 
     // TODO

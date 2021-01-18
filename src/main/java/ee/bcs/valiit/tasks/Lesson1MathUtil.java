@@ -9,13 +9,17 @@ public class Lesson1MathUtil {
     }
 
     public static void main(String[] args) {
+        int miinimum = min(3, 5);
+        System.out.println(miinimum);
     }
 
     // TODO tagasta a ja b väikseim väärtus
     public static int min(int a, int b) {
-        System.out.println(min(3, 5));
-        System.out.println(min(-1, -9));
-        return 0;
+        if (a < b){
+            return a;
+        } else {
+            return b;
+        }
     }
 
     // TODO tagasta a ja b suurim väärtus
@@ -49,14 +53,13 @@ public class Lesson1MathUtil {
 
     // TODO tagasta kolmest arvust kõige väiksem
     public static int min(int a, int b, int c) {
-        if (a <= b && b <= c) {
+        if (a <= b && a <= c) {
             return a;
-        } else if (a >= b && b >= c) {
+        } else if (a >= b && c >= b) {
             return b;
         } else {
             return c;
         }
-
     }
 
     // TODO tagasta kolmest arvust kõige suurem
