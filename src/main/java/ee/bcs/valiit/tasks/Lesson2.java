@@ -1,17 +1,17 @@
 package ee.bcs.valiit.tasks;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.*;
 
 public class Lesson2 {
 
     public static void main(String[] args) {
 
-
+/*
         exercise1(); // ei tagasta
         exercise2(5); // ei tagasta
         exercise3(3, 3); // ei tagasta
+
+
         exercise4(6); // tagastab v22rtuse aga seda ei kasutata
         System.out.println(exercise4(0));
         System.out.println(exercise4(1));
@@ -26,6 +26,9 @@ public class Lesson2 {
 
         System.out.println(exercise5(1, 10));
         seqLenght(2);
+
+
+ */
         // TODO siia saab kirjutada koodi testimiseks
     }
 
@@ -51,17 +54,12 @@ public class Lesson2 {
     // Sisend 5
     // Väljund 2 4 6 8 10
 
-    public static void exercise2(int x) {
-        /* int paarisarv = 2;
-        while (paarisarv <= x * 2) {
-            System.out.println(paarisarv);
-            paarisarv += 2;
-        }
-         */
+    public static int exercise2(int x) {
         for (int i = 1; i <= x; i++) {
-            System.out.println(i * 2);
+            return x;
         }
 
+        return x;
     }
 
     // TODO trüki välja korrutustabel mis on x ühikut lai ja y ühikut kõrge
@@ -151,7 +149,7 @@ public class Lesson2 {
                 n = n * 3 + 1; //kui tsykkel on paaritu arv
             }
         }
-        return count;
+        return count; //tagastab
 
     }
 }

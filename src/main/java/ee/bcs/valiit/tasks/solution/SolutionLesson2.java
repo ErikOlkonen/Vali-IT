@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class SolutionLesson2 {
 
     public static void main(String[] args) {
+
         System.out.println(exercise5(1, 10));
     }
 
@@ -88,34 +89,34 @@ public class SolutionLesson2 {
     }
 
     public static int exercise4Recursion(int n) {
-        if(n <= 0){
+        if (n <= 0) {
             return 0;
-        } else if (n == 1){
+        } else if (n == 1) {
             return 1;
         } else {
-            return exercise4Recursion(n-1) + exercise4Recursion(n-2);
+            return exercise4Recursion(n - 1) + exercise4Recursion(n - 2);
         }
     }
 
     public static String exercise5(int x, int y) {
         int maxLength = 0;
-        for(int i = x; i <= y; i++){
+        for (int i = x; i <= y; i++) {
             int seqLength = seqLength(i);
-            if(seqLength > maxLength){
+            if (seqLength > maxLength) {
                 maxLength = seqLength;
             }
         }
         return x + " " + y + " " + maxLength;
     }
-    
+
     public static int seqLength(int n) {
         int count = 1;
-        while(n > 1){
+        while (n > 1) {
             count++;
-            if(n%2 == 0){
+            if (n % 2 == 0) {
                 n = n / 2;
             } else {
-                n = n*3 + 1;
+                n = n * 3 + 1;
             }
         }
         return count;

@@ -25,7 +25,7 @@ public class Lesson3 {
 
          */
 
-
+/*
         Scanner scan = new Scanner(System.in);
         System.out.print("Sisesta number : ");
         int num = 0;
@@ -50,8 +50,7 @@ public class Lesson3 {
             System.out.print("Ei ole algarv");
         }
 
-
-
+ */
 
 
         // TODO tagasta x faktoriaal.
@@ -80,17 +79,10 @@ public class Lesson3 {
     }
 
     public static int sum(int[] x) {
-        // Todo liida kokku kõik numbrid massivis x
-        /* ...
-        int[] x = {10,20,30,40,50,60,70,80,90,100};    //array
-        int sum = IntStream.of(x).sum();    //leiame summa
-        System.out.println("Massiivi summa " + sum);
-
-         */
         int sum = 0;
-        for (int i = 0; i < x.length; i++)
-            sum += x[i];  // sum
-
+        for (int i : x) {
+            sum += i;
+        }
         return sum;
     }
 
@@ -110,19 +102,17 @@ public class Lesson3 {
     // TODO sorteeri massiiv suuruse järgi.
     // TODO kasuta tsükleid, ära kasuta ühtegi olemasolevat sort funktsiooni
     // TODO SELECTION SORT
-    public static int[] sort(int[] array) {
-        for (int j = 0; j < array.length - 1; j++) {
-            int minIndex = j;
-            for (int i = j + 1; i < array.length; i++) {
-                if (array[i] < array[minIndex]) {
-                    minIndex = i;
+    public static int[] sort(int[] a) {
+        for (int j = 0; j < a.length; j++) {
+            for (int i = 0; i < a.length - 1 - j; i++) {
+                if (a[i] > a[i + 1]) {
+                    int tmp = a[i];
+                    a[i] = a[i + 1];
+                    a[i + 1] = tmp;
                 }
             }
-            int tmp = array[0];
-            array[0] = array[minIndex];
-            array[minIndex] = tmp;
         }
-        return array;
+        return a;
     }
 
 
@@ -137,15 +127,19 @@ public class Lesson3 {
 
      */
 
+    // TODO tagasta kas sisestatud arv on primaar arv (jagub ainult 1 ja iseendaga)
 
 
-    /* public static boolean isPrime(int x) {
-        System.out.println("Sisesta arv");
-        Scanner scanner = new Scanner(System.in);
-
-        // TODO tagasta kas sisestatud arv on primaar arv (jagub ainult 1 ja iseendaga)
-        return false;
+    public static boolean isPrime(int n) {
+        boolean result = true;
+        for (int x = 2; x < n; x++) {
+            if ((n % x) == 0) {
+                result = false;
+                break;
+            }
+        }
+        return result;
     }
 
-     */
+
 }
