@@ -4,23 +4,22 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Scanner;
 
+
 public class Lesson4 {
     // Store account nr as a key and account balance as value
     static HashMap<String, BigDecimal> accountBalanceMap = new HashMap<>();
 
-
     public static void main(String[] args) {
-        System.out.println("Sisesta midagi..");
-        System.out.println("Sisesta exit et väljuda");
         Scanner scanner = new Scanner(System.in);
-        while (true) {
-            String line = scanner.nextLine();
-            if (line.equalsIgnoreCase("exit")) {
+        while (true){
+            System.out.println("Please eneter command: ");
+            String command = scanner.nextLine();
+            String[] commandParts = command.split(" "); // createAccount EE123x
+            if (command.equalsIgnoreCase("exit")){
                 break;
+            } else if(commandParts[0].equalsIgnoreCase("createAccount")){
+                accountBalanceMap.put(commandParts[1], new BigDecimal("0"));
             }
-            // TODO 1
-            // Add command: "createAccount ${accountNr}"
-            // this has to store accountNr with 0 balance
             // TODO 2
             // Add command: "getBalance ${accountNr}"
             // this has to display account balance of specific acount
@@ -40,13 +39,6 @@ public class Lesson4 {
             // And from account has enough money to do that transaction
             else {
                 System.out.println("Unknown command");
-            }
-        }
-        while (true) {
-            String line = scanner.nextLine();
-            if (line.equalsIgnoreCase("createAccount")) {
-                System.out.println("Konto loomine");
-
             }
         }
     }
