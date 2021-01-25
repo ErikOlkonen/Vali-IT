@@ -18,7 +18,7 @@ public class BankService {
     @Autowired
     private BankRepository bankRepository;
 
-    public void createAccount(@RequestParam("accountNr") String accountNr) {
+    public void createAccount(String accountNr) {
         bankRepository.createAccount(accountNr);
     }
 
@@ -48,7 +48,7 @@ public class BankService {
     public void transferMoney(String fromAccount, String toAccount, BigDecimal amount) {
         BigDecimal fromBalance = bankRepository.getAccountBalance(fromAccount);
         // kas fromAccountil on piisavalt raha?
-        if (fromBalance.compareTo(amount) < 0) {
+        if (fromBalance.compareTo(amount) < 1) {
             throw new RuntimeException("Not enough money to transfer");
         }
         // kontol on piisavalt raha, 100-50=50, newFromBalance on 50
