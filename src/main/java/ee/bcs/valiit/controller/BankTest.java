@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("bank2")
+@RequestMapping("bank5")
 public class BankTest {
     @Autowired
     private NamedParameterJdbcTemplate jdbcTemplate;

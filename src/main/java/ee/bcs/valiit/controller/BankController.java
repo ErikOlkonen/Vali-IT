@@ -13,18 +13,28 @@ import java.util.Map;
 @RestController
 @RequestMapping("bank")
 public class BankController {
+
+
     @Autowired
     private BankService bankService;
 
     // HashMap<String, BigDecimal> accountMap2 = new HashMap<>();
 
-    // http://localhost:8080/bank/bank?accountNr=EE123
-    @PostMapping("bank")
-    public String createAccount(@RequestParam("accountNr") String accountNr) {
-        bankService.createAccount(accountNr);
+
+    // http://localhost:8080/bank/createCustomer?firstName=Peeter&lastName=Puu
+    @PostMapping("createCustomer")
+    public void createCustomer(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName, String number_of_accounts) {
+        bankService.createCustomer(firstName, lastName, number_of_accounts);
+    }
+
+    // http://localhost:8080/bank/createAccount?accountNr=EE123&customer_id=1
+    @PostMapping("createAccount")
+    public String createAccount(@RequestParam("accountNr") String accountNr, int customer_id) {
+        bankService.createAccount(accountNr, customer_id);
         return "Sinu konto number on: " + accountNr;
+
         /*
-        String sql = "INSERT INTO account (accountnr, balance) VALUES (:accountNr, :balance)";
+        String sql = "INSERT INTO account (accountNr, balance) VALUES (:accountNr, :balance)";
         Map<String, Object> accountMap = new HashMap();
         System.out.println(sql);
         accountMap.put("accountNr", accountNr);
@@ -47,7 +57,7 @@ public class BankController {
     }
 
     // http://localhost:8080/bank/depositMoney?accountNr=EE123&amount=12
-    @GetMapping("depositMoney")
+    @PostMapping("depositMoney")
     public void depositMoney(@RequestParam("accountNr") String accountNr, @RequestParam("amount") BigDecimal amount) {
         bankService.depositMoney(accountNr, amount);
         /*
@@ -61,8 +71,9 @@ public class BankController {
     }
 
     // http://localhost:8080/bank/withdrawMoney?accountNr=EE123&amount=12
-    @GetMapping("withdrawMoney")
-    public void withdrawMoney(@RequestParam("accountNr") String accountNr, @RequestParam("amount") BigDecimal amount) {
+    @PostMapping("withdrawMoney")
+    public void withdrawMoney(@RequestParam("accountNr") String accountNr, @RequestParam("amount") BigDecimal
+            amount) {
         bankService.withdrawMoney(accountNr, amount);
         //BigDecimal balance = accountMap.get(accountNr);
         /*
@@ -80,7 +91,7 @@ public class BankController {
     }
 
     // http://localhost:8080/bank/transferMoney?fromAccount=EE123&toAccount=EE124&amount=12
-    @GetMapping("transferMoney")
+    @PostMapping("transferMoney")
     public void transferMoney(@RequestParam("fromAccount") String fromAccount,
                               @RequestParam("toAccount") String toAccount,
                               @RequestParam("amount") BigDecimal amount) {
@@ -123,3 +134,5 @@ public class BankController {
 
  */
 }
+
+

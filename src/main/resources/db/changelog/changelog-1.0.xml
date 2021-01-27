@@ -4,7 +4,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <changeSet id="1" author="Siim">
+    <changeSet id="1" author="Erik">
         <createTable tableName="author">
             <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true"/>
@@ -19,6 +19,67 @@
             <column name="name" type="text"/>
             <column name="author_id" type="int">
                 <constraints foreignKeyName="fk_book_author" references="author(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="27-01-2021" author="Erik">
+        <createTable tableName="customer">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="first_name" type="text">
+            </column>
+            <column name="last_name" type="text">
+            </column>
+            <column name="number_of_accounts" type="text">
+            </column>
+        </createTable>
+        <createTable tableName="account">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="accountnr" type="text"/>
+            <column name="balance" type="numeric(10,2)"/>
+            <column name="customer_id" type="int">
+                <constraints foreignKeyName="fk_customer_account_customer_id" references="customer(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="26-01-2021-2" author="Erik">
+        <createTable tableName="account2">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="account_number" type="int"/>
+            <column name="balance" type="numeric(10,2)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="26-01-2021-9" author="Erik">
+        <createTable tableName="employee">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="text">
+            </column>
+            <column name="address" type="text">
+            </column>
+        </createTable>
+        <createTable tableName="customers">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="first_name" type="text">
+            </column>
+            <column name="last_name" type="text">
+            </column>
+            <column name="number_of_accounts" type="int">
+            </column>
+        </createTable>
+        <createTable tableName="account3">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="account_number" type="text">
             </column>
         </createTable>
     </changeSet>

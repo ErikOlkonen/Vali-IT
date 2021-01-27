@@ -18,7 +18,19 @@ public class BankController2 {
 
     @Autowired
     private BankService2 bankService2;
+    @Autowired
+    private NamedParameterJdbcTemplate jdbcTemplate;
 
+    // http://localhost:8080/bank2/createCustomer?firstName=Peeter&lastName=Puu
+    @GetMapping("createCustomer")
+    public String createCustomer( String firstName, String lastName) {
+        String sql8 = "INSERT INTO customer (first_name, last_name) VALUES (:first_name, :last_name)";
+        Map<String, String> paramMap = new HashMap();
+        paramMap.put("first_name", firstName);
+        paramMap.put("last_name", lastName);
+        jdbcTemplate.update(sql8, paramMap);
+        return "Customer created";
+    }
     // http://localhost:8080/bank2/createAccount?accountNr=EE123
     @GetMapping("createAccount")
     public void createAccount(@RequestParam("accountNr") String accountNr){
@@ -52,4 +64,14 @@ public class BankController2 {
                               @RequestParam("amount") BigDecimal amount){
         bankService2.transferMoney(fromAccount, toAccount, amount);
     }
+    // customer tabel juurde teha, kus on kirjas kliendid (nimi, peremini ja siis customer id).
+    // customer tabel on juba kasutuses.
+    // account tabelisse siis ainult id ja kontode list?
+    // omavahel need 2ra linkida siis id-de kaudu.
+    // lvl 2. transaction history ka teha
+
+    // jdbcTemplate.queryForList <-- tagastab 1 tulba
+
+    // TTY andmebaasid loengud, netis yleval ka.
+    //
 }

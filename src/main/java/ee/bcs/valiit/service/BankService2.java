@@ -22,6 +22,7 @@ public class BankService2 {
 
     // http://localhost:8080/bank2/createAccount?accountNr=EE125
     public void createAccount(String accountNr) {
+
         bankRepository2.createAccount(accountNr);
     }
 
@@ -38,6 +39,7 @@ public class BankService2 {
 
         bankRepository2.updateBalance(accountNr, newBalance);
     }
+
     // http://localhost:8080/bank2/withdrawMoney?accountNr=EE125&amount=12
     public void withdrawMoney(String accountNr, BigDecimal amount) {
         BigDecimal balance = bankRepository2.getAccountBalance(accountNr);
@@ -49,6 +51,7 @@ public class BankService2 {
         bankRepository2.updateBalance(accountNr, newBalance);
 
     }
+
     // http://localhost:8080/bank2/transferMoney?fromAccount=EE125&toAccount=EE124&amount=12
     public void transferMoney(String fromAccount, String toAccount, BigDecimal amount) {
         BigDecimal fromBalance = bankRepository2.getAccountBalance(fromAccount);

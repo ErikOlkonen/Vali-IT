@@ -78,7 +78,7 @@ public class EmployeeController {
     public String deletecustomer(@RequestParam("first_name") String first_name,
                                  @RequestParam("last_name") String last_name,
                                  @RequestParam("number_of_accounts") String number_of_accounts) {
-        String sql = "DELETE FROM customers WHERE id = 8";
+        String sql = "DELETE FROM customer WHERE id = 8";
         Map<String, String> paramMap = new HashMap<>();
         // paramMap.delete("first_name", first_name);
         paramMap.put("last_name", last_name);
