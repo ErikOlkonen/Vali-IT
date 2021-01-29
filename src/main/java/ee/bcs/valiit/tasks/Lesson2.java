@@ -6,29 +6,6 @@ public class Lesson2 {
 
     public static void main(String[] args) {
 
-/*
-        exercise1(); // ei tagasta
-        exercise2(5); // ei tagasta
-        exercise3(3, 3); // ei tagasta
-
-
-        exercise4(6); // tagastab v22rtuse aga seda ei kasutata
-        System.out.println(exercise4(0));
-        System.out.println(exercise4(1));
-        System.out.println(exercise4(2));
-        System.out.println(exercise4(3));
-        System.out.println(exercise4(4));
-        System.out.println(exercise4(5));
-        System.out.println(exercise4(6));
-        System.out.println(exercise4(7));
-        System.out.println(exercise4(8));
-        System.out.println(exercise4(9));
-
-        System.out.println(exercise5(1, 10));
-        seqLenght(2);
-
-
- */
         // TODO siia saab kirjutada koodi testimiseks
     }
 
@@ -37,6 +14,7 @@ public class Lesson2 {
     // TODO trüki arvud välja vastupidises järiekorras
 
     public static void exercise1() {
+        // scanner tuleb panna maini, et eda saaks unit testida
         String[] a = new String[10];
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < a.length; i++) {

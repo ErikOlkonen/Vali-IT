@@ -9,8 +9,7 @@ public class Lesson1MathUtil {
     }
 
     public static void main(String[] args) {
-        int miinimum = min(3, 5);
-        System.out.println(miinimum);
+
     }
 
     // TODO tagasta a ja b väikseim väärtus
