@@ -2,84 +2,193 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bank</title>
+    <link rel="stylesheet" href="style3.css">
 </head>
 <body>
-<div style="text-align: center">
-    <table style="margin-left:auto;margin-right:auto;" border="1" width="50%">
+<div style="text-align: left">
+    <img src="https://i.ibb.co/t2qwvsq/bank.jpg" alt="bank" border="0" style="width:50%;height:50%">
+    <h5>"Get rich or die trying Bank"</h5>
+    <br></div>
+<div style="text-align: left"><p>
+    <h6>Create new customer: <br></h6>
+    <table width="300px" border="2" style="text-align: left">
         <tr>
-            <td>test</td>
+            <th>First name</th>
+            <th>Last name</th>
+            <!--        <th>address</th>-->
+        </tr>
+        <tr>
+            <td><input id="firstname" type="textbox"></td>
+            <td><input id="lastname" type="textbox"></td>
+            <!--            <td><input id="customer_id" type="textbox"></td>-->
+        </tr>
+        <tr>
+            <td colspan="3">
+                <button id="makeRequest" onclick="alert('New customer created!')">Create customer</button>
+
+            </td>
         </tr>
     </table>
-    <div id="container">
-        Tühi div
-    </div>
-    <form method="post">
-    valik1: <input type="radio" name="a">
-    <input type="radio" name="a">
-    <input type="radio" name="a">
-    <input type="radio" name="b">
-    <input type="radio" name="b">
-    <input type="radio" name="b">
-    <br>
-    hidden: <input type="hidden">
-    <br>
-    text: <input id="textElement" type="text"/>
-    <br>
-    password: <input type="password"/>
-    <br>
-    textarea: <textarea name="aa"></textarea>
-    <br>
-    select:
-    <select>
-        <option>valik 1</option>
-        <option>valik 2</option>
-        <option>valik 3</option>
-    </select>
-    <br>
-    fail: <input type="file"/>
-    <br>
-    number: <input type="number"/>
-    <br>
-    email: <input type="email"/>
-    <br>
-    date: <input type="date">
-    <br>
-    datetime: <input type="datetime-local">
-    <br>
-    week: <input type="week">
-    <br>
-    time: <input type="time">
-    <br>
-    color: <input type="color">
-    <br>
-    range: <input type="range">
-    <br>
-    tel: <input type="tel">
-    <input type="submit">
-    </form>
-
-    <script>
-        function calculateLoan(amount,months,interest = 10, name="John"){
-            return months;
-        }
-        console.log(calculateLoan(1000, 36, 7, "John Snow"));
-        console.log(calculateLoan(1000, 36, 7, "John", "A"));
-        console.log(calculateLoan(1000, 36));
-        console.log(calculateLoan());
-        let element = document.getElementById("textElement");
-        element.value = "midagi";
-        let myElement = document.getElementById("container");
-        let myNewElement = document.createElement("input");
-        myElement.append(myNewElement);
-        myNewElement.value="mingi tekst";
-    </script>
 </div>
+<br><br>
+<h6>Create new account: <br></h6>
+<div style="text-align: center">
+    <table width="300px" border="2" style="text-align: left">
+        <tr>
+            <th>Account number (EExxx):</th>
+            <th>Customer id:</th>
+            <!--        <th>address</th>-->
+        </tr>
+        <tr>
+            <td><input id="accountNr" type="textbox"></td>
+            <td><input id="customer_id" type="textbox"></td>
+            <td><input type="textbox"></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <button id="create_account" onclick="alert('Account created')">Create account</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</p>
+<br><br>
+<h6> Get account balance: </h6>
+<p> Account number (EExxx): </p>
+<input id="accountNr3" type="textbox">
+<button id="getAccountBalance2" onclick="alert('Get account balance')">Get account balance</button>
+<input id="balance" disabled>
+<br>
+<h6>Deposit money: <br></h6>
+<div style="text-align: center">
+    <table width="300px" border="2" style="text-align: left">
+        <tr>
+            <th>Account number (EExxx):</th>
+            <th>Amount:</th>
+            <!--        <th>address</th>-->
+        </tr>
+        <tr>
+            <td><input id="accountNr2" type="textbox"></td>
+            <td><input id="amount" type="textbox"></td>
+            <td><input type="textbox"></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <button onclick="alert('Ye')">Deposit money</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<br><br>
+<h6>Withdraw money: </h6><br>
+<div style="text-align: center">
+    <table width="300px" border="2" style="text-align: left">
+        <tr>
+            <th>Account number (EExxx):</th>
+            <th>Amount:</th>
+            <!--        <th>address</th>-->
+        </tr>
+        <tr>
+            <td><input type="textbox"></td>
+            <td><input type="textbox"></td>
+            <td><input type="textbox"></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <button onclick="alert('Yey')">Withdraw money</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</p>
+<br><br>
+<h6>Transfer money: </h6><br>
+<div style="text-align: center">
+    <table width="300px" border="2" style="text-align: left">
+        <tr>
+            <th>Account number from(EExxx):</th>
+            <th>Account number to(EExxx):</th>
+            <th>Amount</th>
+        </tr>
+        <tr>
+            <td><input type="textbox"></td>
+            <td><input type="textbox"></td>
+            <td><input type="textbox"></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <button onclick="alert('Yeyey')">Transfer money</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+
+    // 'http://localhost:8080/bank/createCustomer?firstName=firstname&lastName=lastname'
+    // let postUrl = 'http://localhost:8080/bank/createCustomer?firstName=' + firstname.value + 'lastName=' + lastname.value;
+    // let firstname = document.getElementById("firstName");
+    // let lastname = document.getElementById("lastName");
+    let makeRequest = document.getElementById("makeRequest")
+
+    function createCustomer() {
+        let firstName = document.getElementById("firstname");
+        let lastName = document.getElementById("lastname");
+        // let newCustomer = {
+        //     firstname: document.getElementById("firstname").value,
+        //     lastname: document.getElementById("lastname").value
+        fetch('/bank/createCustomer?firstName=' + firstName.value + '&lastName=' + lastName.value, {
+
+            method: 'POST'
+
+        })
+        //     .then(result => result.text())
+        //     .then(function (result) {
+        //         alert("New customer" + newCustomer.value + " created");
+        //     })
+        // }
+
+    }
+
+    makeRequest.onclick = createCustomer;
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    let create_account = document.getElementById("create_account")
+
+    function createAccount() {
+        let accountNr = document.getElementById("accountNr");
+        let customer_id = document.getElementById("customer_id");
+        fetch('/bank/createAccount?accountNr=' + accountNr.value + '&customer_id=' + customer_id.value, {
+
+            method: 'POST'
+
+        })
+    }
+
+    create_account.onclick = createAccount;
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    // http://localhost:8080/bank/accountBalance?accountNr=EE123
+    let getAccountBalance2 = document.getElementById("getAccountBalance2")
+
+    function getAccountBalance() {
+        let accountNr3 = document.getElementById("accountNr3");
+        fetch('/bank/accountBalance?accountNr=' + accountNr3.value, {
+
+            method: 'GET'
+
+        })
+            .then(result => result.json())
+        .then(function(result) {
+            console.log(result)
+
+        })
+
+    }
+// let balanceButton = document.getElementById("balance");
+    getAccountBalance2.onclick = getAccountBalance;
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+</script>
 </body>
 </html>
-
-
-
-
-
-

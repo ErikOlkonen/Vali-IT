@@ -3,12 +3,10 @@ package ee.bcs.valiit.controller;
 
 import ee.bcs.valiit.service.BankService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Map;
+
 
 @RestController
 @RequestMapping("bank")
@@ -18,10 +16,8 @@ public class BankController {
     @Autowired
     private BankService bankService;
 
-    // HashMap<String, BigDecimal> accountMap2 = new HashMap<>();
-
-
     // http://localhost:8080/bank/createCustomer?firstName=Peeter&lastName=Puu
+
     @PostMapping("createCustomer")
     public void createCustomer(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName, String number_of_accounts) {
         bankService.createCustomer(firstName, lastName, number_of_accounts);

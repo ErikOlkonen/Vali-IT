@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kergema raskusastmega matemaatilised rehkendused</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<div style="text-align: center">
+    <p underline="true">
+        Kergema raskusastmega matemaatilised rehkendused kõigile huvilistele!
+    </p>
+    <p>
+        Min value
+    </p>
+    A: <input id="a">
+    B: <input id="b">
+    C: <input id="c">
+    <br>
+    <button id="min_button" type="button">Min</button>
+    <br>
+    <u>Vastus:</u><input id="min_answer" disabled/>
+    <br>
+    <p>
+        Max value
+    </p>
+    <!--a: <input id="max_a">-->
+    <!--b: <input id="max_b">-->
+    <!--c: <input id="min_c">-->
+    <br>
+    <button id="max_button" type="button">Max</button>
+    <br>
+    <u>Vastus:</u><input id="max_answer" disabled/>
+    <br>
+    <p>
+        Abs value
+    </p>
+    <br>
+    <button id="abs_button" type="button">Abs</button>
+    <br>
+    <u>Vastus:</u><input id="abs_answer" disabled/>
+    <br>
+    <br>
+    <p>
+        isEven value
+    </p>
+    <br>
+    <button id="isEven_button" type="button">isEven</button>
+    <br>
+    <u>Vastus:</u><input id="isEven_answer" disabled/>
+    <br>
+</div>
+<script>
+    let min_a = document.getElementById("a");
+    let min_b = document.getElementById("b");
+    let min_c = document.getElementById("c");
+    let min_answer = document.getElementById("min_answer")
+
+    function pressButtonFunction() {
+        if (min_a.value < min_b.value) {
+            min_answer.value = min_a.value;
+        } else if (min_b.value < min_c.value) {
+            min_answer.value = min_b.value;
+        } else {
+            min_answer.value = min_c.value;
+        }
+    }
+
+    let element = document.getElementById("min_button");
+    element.addEventListener("click", pressButtonFunction)
+
+    let max_a = document.getElementById("a");
+    let max_b = document.getElementById("b");
+    let max_c = document.getElementById("c");
+    let max_answer = document.getElementById("max_answer")
+
+    function pressButtonFunction2() {
+        if (max_a.value > max_b.value) {
+            max_answer.value = max_a.value;
+        } else if (max_b.value > max_c.value) {
+            max_answer.value = max_b.value;
+        } else {
+            max_answer.value = max_c.value
+        }
+    }
+
+    let element2 = document.getElementById("max_button");
+    element2.addEventListener("click", pressButtonFunction2)
+
+    let abs_a = document.getElementById("a");
+    let abs_answer = document.getElementById("abs_answer")
+
+    function pressButtonFunction3() {
+
+        abs_answer.value = Math.sqrt((abs_a.value) * (abs_a.value))
+
+    }
+
+    let element3 = document.getElementById("abs_button");
+    element3.addEventListener("click", pressButtonFunction3)
+
+    let isEven_a = document.getElementById("a");
+    let isEven_answer = document.getElementById("isEven_answer")
+
+    function pressButtonFunction4() {
+        if (isEven_a % 2 === 0) {
+            isEven_answer = true;
+        } else {
+            isEven_answer = false;
+        }
+    }
+
+    let element4 = document.getElementById("isEven_button");
+    element4.addEventListener("click", pressButtonFunction4)
+
+    // let i = 1;
+    // i = i + "";
+    // i = i + 1;
+    // i = i - 1;
+    // alert(i)
+
+    // let x = "a" - "b";
+    // console.log(typeof x);
+</script>
+</body>
+</html>

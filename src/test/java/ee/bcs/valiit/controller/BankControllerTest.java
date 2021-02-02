@@ -8,8 +8,11 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import javax.transaction.Transactional;
+
 import static org.junit.jupiter.api.Assertions.*;
 
+@Transactional
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 class BankControllerTest {
@@ -35,7 +38,7 @@ class BankControllerTest {
 
     @Test
     void depositMoney() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.post("/bank/depositMoney?accountNr=EE123&amount=12")
+        mockMvc.perform(MockMvcRequestBuilders.put("/bank/depositMoney?accountNr=EE123&amount=12")
                 .contentType("application/json")
         ).andExpect(MockMvcResultMatchers.status().isOk());
     }
@@ -43,14 +46,14 @@ class BankControllerTest {
 
     @Test
     void withdrawMoney() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.post("/bank/withdrawMoney?accountNr=EE123&amount=12")
+        mockMvc.perform(MockMvcRequestBuilders.put("/bank/withdrawMoney?accountNr=EE123&amount=12")
                 .contentType("application/json")
         ).andExpect(MockMvcResultMatchers.status().isOk());
     }
 
     @Test
     void transferMoney() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.post("/bank/transferMoney?fromAccount=EE123&toAccount=EE124&amount=12")
+        mockMvc.perform(MockMvcRequestBuilders.put("/bank/transferMoney?fromAccount=EE123&toAccount=EE124&amount=12")
                 .contentType("application/json")
         ).andExpect(MockMvcResultMatchers.status().isOk());
     }
