@@ -1,6 +1,6 @@
 package ee.bcs.valiit.repository;
 
-import ee.bcs.valiit.exception.ErrorResponse.BankException;
+import liquibase.pro.packaged.S;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -47,13 +47,11 @@ public class BankRepository {
         String sql = "SELECT balance FROM account WHERE accountnr = :accountNumber";
         Map<String, String> accountMap = new HashMap<>();
         accountMap.put("accountNumber", accountNr);
-        try {
-            return jdbcTemplate.queryForObject(sql, accountMap, BigDecimal.class);
-        } catch (EmptyResultDataAccessException e) {
-            return null;
-            // throw new BankException("Invalid money!")
-        }
+
+        return jdbcTemplate.queryForObject(sql, accountMap, BigDecimal.class);
+        // throw new BankException("Invalid money!")
     }
+
 
     public BigDecimal updateAccountBalance(String accountNr, BigDecimal newBalance) {
         String updateStatement = "UPDATE account SET balance = :balance WHERE accountnr = :accountNumber";
@@ -62,6 +60,16 @@ public class BankRepository {
         accountMap2.put("balance", newBalance);
         jdbcTemplate.update(updateStatement, accountMap2);
         return newBalance;
+    }
+
+    public String findPasswordByUsername(String username) {
+        String sql55 = "SELECT password FROM clients WHERE username = :username";
+        Map<String, Object> passwordMap = new HashMap<>();
+        passwordMap.put("username", username);
+        return jdbcTemplate.queryForObject(sql55, passwordMap, String.class);
+
+        // return jdbcTemplate.queryForObjects(sql55, passwordMap);
+        // mida peaksin siit returnima ???
     }
 
 }

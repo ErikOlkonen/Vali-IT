@@ -15,9 +15,12 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/","/home").permitAll()
-                .anyRequest().authenticated()
+             //   .anyRequest().authenticated()
+                .anyRequest().permitAll()
                 .and()
                 .formLogin()
+                // .successForwardUrl() <--- see on edasi suunamiseks
+//                .defaultSuccessUrl("/index.html", true)
                 .permitAll();
         http.csrf().disable();
     }

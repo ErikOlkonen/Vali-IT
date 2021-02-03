@@ -17,7 +17,8 @@ public class BankController {
     private BankService bankService;
 
     // http://localhost:8080/bank/createCustomer?firstName=Peeter&lastName=Puu
-
+    @CrossOrigin
+//    @GetMapping
     @PostMapping("createCustomer")
     public void createCustomer(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName, String number_of_accounts) {
         bankService.createCustomer(firstName, lastName, number_of_accounts);
@@ -25,17 +26,17 @@ public class BankController {
 
     // http://localhost:8080/bank/createAccount?accountNr=EE123&customer_id=1
     @PostMapping("createAccount")
+    @CrossOrigin
     public String createAccount(@RequestParam("accountNr") String accountNr, int customer_id) {
         bankService.createAccount(accountNr, customer_id);
         return "Sinu konto number on: " + accountNr;
     }
 
-    // http://localhost:8080/bank/accountBalance?accountNr=EE123
+    // http://localhost:8080/bank/accountBalance?accountNr=EE124
     // get account balance (show balance)
     @GetMapping("accountBalance")
     public BigDecimal accountBalance(@RequestParam("accountNr") String accountNr) {
-        // Kuidas saaks teha nii, et returni hulgas oleks ka midagi nagu näiteks "Your account number
-        // is EEXXX" ? Et seda kuvatakse Postmanis.
+
         return bankService.getAccountBalance(accountNr);
     }
 

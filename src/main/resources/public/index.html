@@ -69,13 +69,13 @@
             <!--        <th>address</th>-->
         </tr>
         <tr>
-            <td><input id="accountNr2" type="textbox"></td>
+            <td><input id="accountNr4" type="textbox"></td>
             <td><input id="amount" type="textbox"></td>
-            <td><input type="textbox"></td>
+            <!--            <td><input type="textbox"></td>-->
         </tr>
         <tr>
             <td colspan="3">
-                <button onclick="alert('Ye')">Deposit money</button>
+                <button id="depositButton">Deposit money</button>
             </td>
         </tr>
     </table>
@@ -177,18 +177,34 @@
             method: 'GET'
 
         })
-            .then(result => result.json())
-        .then(function(result) {
-            console.log(result)
+            .then(result => result.text())
+            .then(function (result) {
+                alert("Your balance is: " + result);
 
-        })
+            })
 
     }
-// let balanceButton = document.getElementById("balance");
+
+    // let balanceButton = document.getElementById("balance");
     getAccountBalance2.onclick = getAccountBalance;
     ///////////////////////////////////////////////////////////////////////////////////////////////////
+    // http://localhost:8080/bank/depositMoney?accountNr=EE123&amount=12
+    function depositMoney() {
+        let accountNr4 = document.getElementById("deposit_account");
+        let amount = document.getElementById("deposit_amount");
+        fetch('/bank/depositMoney?accountNr=' + accountNr4.value + '&amount=' + amount.value, {
+
+            method: 'PUT'
+        })
+    }
 
 
+    let depositButton = document.getElementById("depositButton")
+
+    depositButton.onclick = depositMoney;
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
 </script>
 </body>
 </html>
